@@ -4,7 +4,7 @@ import java.awt.*;
 import java.util.Observable;
 import java.util.Observer;
 
-public class WatchPresenter implements Observer {
+public class WatchPresenter implements Watch.Observer {
     private final Watch watch;
     private final WatchDisplay Display;
 
@@ -28,7 +28,7 @@ public class WatchPresenter implements Observer {
     }
 
     @Override
-    public void update(Observable observable, Object o) {
+    public void update() {
         Display.paint(pointsOf(watch));
     }
 }
